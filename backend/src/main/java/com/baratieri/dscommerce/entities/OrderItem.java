@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem {
-   @EmbeddedId
+    @EmbeddedId
     private OrderItemPk id = new OrderItemPk();
     private Integer quantity;
     private Double price;
