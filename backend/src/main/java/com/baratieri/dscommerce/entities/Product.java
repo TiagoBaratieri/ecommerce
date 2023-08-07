@@ -69,12 +69,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getImgUri() {
+    public String getImgUrL() {
         return imgUrl;
     }
 
-    public void setImgUri(String imgUri) {
-        this.imgUrl = imgUri;
+    public void setImgUrL(String imgUrL) {
+        this.imgUrl = imgUrL;
     }
 
     public Set<Category> getCategories() {
