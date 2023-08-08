@@ -26,7 +26,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public Page<ProductDTO> finAll(Pageable pageable) {
         Page<Product> list = repository.findAll(pageable);
-        return list.map(x -> new ProductDTO(x));
+        return list.map(ProductDTO::new);
     }
 
     @Transactional
@@ -43,6 +43,10 @@ public class ProductService {
         copyDtoToEntity(dto, entity);
         entity = repository.save(entity);
         return new ProductDTO(entity);
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
     }
 
     private void copyDtoToEntity(ProductDTO dto, Product entity) {
